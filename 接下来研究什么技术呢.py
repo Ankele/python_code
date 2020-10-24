@@ -9,6 +9,12 @@ from datetime import datetime
 from aip import AipSpeech
 from playsound import playsound
 
+"""
+需要安装的包有baidu-aip, playsound
+pip install baidu-aip
+pip install playsound
+"""
+
 
 class Technology:
     """
@@ -67,8 +73,7 @@ class Speech:
 
     def speech(self, text, lang='zh', speed=None, volume=5):
         try:
-            # ppath = os.getcwd()
-            ppath = 'C:\\Users\\Administrator\\Desktop\\python\\mytest1\\video'
+            ppath = os.getcwd()
             mp3name = 'audio_' + str(datetime.now().timestamp()).split('.')[0] + '.mp3'
             mp3path = os.path.join(ppath, mp3name)
             if type(text) != str or len(text) > 1024:
